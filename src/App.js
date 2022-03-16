@@ -4,8 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { Header } from "./components";
 import { Home, Cart } from "./pages";
-import {fetchPizzas} from "./redux/actions/pizzas";
-
+import { fetchPizzas } from "./redux/actions/pizzas";
 
 const App = () => {
   return (
@@ -13,7 +12,7 @@ const App = () => {
       <Header />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>

@@ -1,22 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {
+  const availableTypes = ["тонкое", "традиционное"];
+  const availableSizes = [26, 30, 40];
 
-  const availableTypes = ['тонкое', 'традиционное'];
-  const availableSizes = [26,30,40];
-
-  const [activeType, setActiveType] = useState(types[0])
-  const [activeSize, setActiveSize] = useState(sizes[0])
+  const [activeType, setActiveType] = useState(types[0]);
+  const [activeSize, setActiveSize] = useState(sizes[0]);
 
   const onSelectType = (index) => {
-    setActiveType(index)
-  }
+    setActiveType(index);
+  };
 
   const onSelectSize = (index) => {
-    setActiveSize(index)
-  }
+    setActiveSize(index);
+  };
 
   return (
     <div className="pizza-block">
@@ -30,8 +29,9 @@ const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {
               onClick={() => onSelectType(index)}
               className={classNames({
                 active: activeType === index,
-                disabled: !types.includes(index)
-              })}>
+                disabled: !types.includes(index),
+              })}
+            >
               {type}
             </li>
           ))}
@@ -43,8 +43,9 @@ const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {
               onClick={() => onSelectSize(index)}
               className={classNames({
                 active: activeSize === index,
-                disabled: !sizes.includes(size)
-              })}>
+                disabled: !sizes.includes(size),
+              })}
+            >
               {size} см.
             </li>
           ))}
@@ -82,7 +83,7 @@ PizzaBlock.propTypes = {
 };
 
 PizzaBlock.defaultProps = {
-  name: '---',
+  name: "---",
   price: 0,
   types: [],
   sizes: [],
