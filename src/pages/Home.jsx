@@ -26,7 +26,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const items = useSelector(({ pizzas }) => pizzas.items);
-  const cartItems = useSelector(({cart}) => cart.items)
+  const cartItems = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
@@ -44,11 +44,11 @@ const Home = () => {
 
   const handleAddPizzaToCart = (obj) => {
     dispatch({
-      type: 'ADD_PIZZA_CART',
-      payload: obj
-    })
-    console.log(1)
-  }
+      type: "ADD_PIZZA_CART",
+      payload: obj,
+    });
+    console.log(1);
+  };
 
   return (
     <div className="container">

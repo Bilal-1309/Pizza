@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import {Button} from "../index";
+import { Button } from "../index";
 
-const PizzaBlock = ({ id, name, imageUrl, price, types, sizes, onClickAddPizza, addedCount }) => {
+const PizzaBlock = ({
+  id,
+  name,
+  imageUrl,
+  price,
+  types,
+  sizes,
+  onClickAddPizza,
+  addedCount,
+}) => {
   const availableTypes = ["тонкое", "традиционное"];
   const availableSizes = [26, 30, 40];
 
@@ -25,10 +34,10 @@ const PizzaBlock = ({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
       imageUrl,
       price,
       size: availableSizes[activeSize],
-      type: availableTypes[activeType]
-    }
+      type: availableTypes[activeType],
+    };
     onClickAddPizza(obj);
-  }
+  };
 
   return (
     <div className="pizza-block">
@@ -94,7 +103,7 @@ PizzaBlock.propTypes = {
   types: PropTypes.arrayOf(PropTypes.number),
   sizes: PropTypes.arrayOf(PropTypes.number),
   onClickAddPizza: PropTypes.func,
-  addedCount: PropTypes.number
+  addedCount: PropTypes.number,
 };
 
 PizzaBlock.defaultProps = {
