@@ -35,9 +35,7 @@ function Cart() {
   };
 
   const onClickOrder = () => {
-    if (window.confirm(`Ваш заказ №${Math.floor(Math.random() * (300- 1) + 1)}`)) {
-      dispatch(clearCart());
-    }
+    console.log('ВАШ ЗАКАЗ', items);
   };
 
   return (
